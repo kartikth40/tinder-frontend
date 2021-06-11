@@ -35,34 +35,44 @@ body {
 }
 
 .card {
-  width: 80vw;
+  --rot: 0deg;
+  --tx: 0vw;
+  transform: translateX(var(--tx)) rotate(var(--rot));
+  box-shadow: 0 0 50px rgb(230, 230, 230);
+  width: 70vw;
   height: 60vh;
   position: absolute;
   border-radius: 20px;
   overflow: hidden;
+
   transition: all 0.5s;
 }
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .card {
     width: 60vh;
-    height: 60vh;
+    transition: all 1s;
   }
 }
 .card:hover {
-  transform: rotate(10deg);
+  --rot: 10deg;
 }
 .fadeOut-left {
-  transition: transform 1s;
-  transform: translateX(-200vw) rotate(-70deg);
+  --rot: -70deg;
+  --tx: -200vw;
 }
 .fadeOut-right {
-  transition: transform 1s;
-  transform: translateX(200vw) rotate(70deg);
+  --rot: 70deg;
+  --tx: 200vw;
+}
+.card-img {
+  width: 100%;
+  height: 100%;
 }
 .card img {
-  width: 80vw;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .swipe-btn-container {

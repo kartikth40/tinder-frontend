@@ -1,24 +1,24 @@
-import React from "react"
+import React from 'react'
 
-const SwipeButtons = (props) => {
+const SwipeButtons = ({ setCards }) => {
   const crossBtnClick = () => {
-    const cardElements = document.querySelectorAll(".card")
+    const cardElements = document.querySelectorAll('.card')
     if (cardElements.length) {
-      cardElements[cardElements.length - 1].classList.add("fadeOut-left")
+      cardElements[cardElements.length - 1].classList.add('fadeOut-left')
       setStateWithInterval()
     }
   }
   const starBtnClick = () => {
-    const cardElements = document.querySelectorAll(".card")
+    const cardElements = document.querySelectorAll('.card')
     if (cardElements.length) {
-      cardElements[cardElements.length - 1].classList.add("fadeOut-right")
+      cardElements[cardElements.length - 1].classList.add('fadeOut-right')
       setStateWithInterval()
     }
   }
 
   const setStateWithInterval = () => {
     setTimeout(() => {
-      props.setCards((prev) => {
+      setCards((prev) => {
         return prev.filter((card, index) => index !== prev.length - 1)
       })
     }, 500)
