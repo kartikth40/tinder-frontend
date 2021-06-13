@@ -38,7 +38,7 @@ body {
   --rot: 0deg;
   --tx: 0vw;
   transform: translateX(var(--tx)) rotate(var(--rot));
-  box-shadow: 0 0 50px rgb(230, 230, 230);
+  box-shadow: 0 0 5px rgb(230, 230, 230);
   width: 70vw;
   height: 60vh;
   position: absolute;
